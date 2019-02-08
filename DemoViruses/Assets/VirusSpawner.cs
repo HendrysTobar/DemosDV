@@ -10,31 +10,40 @@ public class VirusSpawner : MonoBehaviour
     #endregion
 
     #region Atributos y Propiedades
+    //Define el objeto original a instanciar
     public GameObject virusPrefab;
-	
+
     #endregion
-	
+
     #region Eventos    
-	
-	
+
+
     #endregion
-	
+
+    #region Mi Region
+    
+
+    #endregion
+
     #region Mensajes Unity
-	
-	void Start ()
+
+    void Start ()
     {
         StartCoroutine(CorutinaEngendrarViruses());		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+    // Update is called once per frame
+    int t = 0;
+	void Update ()
+    {
+        		
 	}
     #endregion
 
     #region Métodos
     public void SpawnVirus()
     {
+        //Instancia un nuevo virus en la posición de este objeto
         Instantiate(virusPrefab, this.transform.position,virusPrefab.transform.rotation);
     }
 
@@ -42,12 +51,17 @@ public class VirusSpawner : MonoBehaviour
     {
         while (true)
         {
+            //RENDIR
             yield return new WaitForSeconds(3f);
             SpawnVirus();
         }
     }
 	
     #endregion
+
+
+
+
     #region CoRutinas
 	
 	
